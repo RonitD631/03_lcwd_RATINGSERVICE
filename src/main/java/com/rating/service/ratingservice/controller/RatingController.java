@@ -27,12 +27,14 @@ public class RatingController {
         return new ResponseEntity<>(ratingService.getAllRatings(), HttpStatus.OK);
     }
 
+    //API GIVING THE LIST OF RATINGS MADE BY A USER
     @GetMapping("/users/{userId}")
     public ResponseEntity<List<Rating>> getAllRatingsByUserId(@PathVariable String userId){
         return new ResponseEntity<>(ratingService.getAllRatingsByUserId(userId), HttpStatus.OK);
 
     }
 
+    //API GIVING THE LIST OF RATINGS GIVEN FOR A HOTEL
     @GetMapping("/hotels/{hotelId}")
     public ResponseEntity<List<Rating>> getAllRatingsByHotelId(@PathVariable String hotelId){
         return new ResponseEntity<>(ratingService.getAllRatingsByHotelId(hotelId), HttpStatus.OK);
